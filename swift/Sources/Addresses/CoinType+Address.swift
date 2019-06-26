@@ -94,6 +94,8 @@ public extension CoinType {
             return WavesAddress(string: string)
         case .aeternity:
             return AeternityAddress(string: string)
+        case .lto:
+            return LTOAddress(string: string)
         }
     }
 }

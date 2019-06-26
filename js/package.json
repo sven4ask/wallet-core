@@ -15,6 +15,7 @@
   },
   "files": [
     "build",
+    "types",
     "README.md"
   ],
   "author": "Sathvik Birudavolu <sathvik@binance.com>",
@@ -35,7 +36,8 @@
     "long": "^4.0.0",
     "node-addon-api": "^1.6.3",
     "node-gyp": "github:brave/node-gyp",
-    "protobufjs": "^6.8.8"
+    "protobufjs": "^6.8.8",
+    "segfault-handler": "^1.2.0"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
@@ -43,7 +45,9 @@
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
     "ts-node": "^8.1.0",
-    "typescript": "^3.4.3"
+    "typescript": "^3.4.3",
+    "bip32": "^2.0.3",
+    "bip39": "^3.0.2"
   },
   "peerDependencies": {
     "@types/long": "^4.0.0",

@@ -817,5 +817,18 @@
         "explorer": "https://terra.stake.id/?#/tx/",
         "url": "https://terra.money",
         "rpcNodeInfo": "https://github.com/terra-project/core"
+    },
+    {
+        "id": "lto",
+        "name": "LTO",
+        "symbol": "LTO",
+        "decimals": 8,
+        "blockchain": "LTO Network",
+        "derivationPath": "m/44'/353'/0'/0'/0'",
+        "curve": "ed25519",
+        "publicKeyType": "ed25519",
+        "explorer": "https://explorer.lto.network/transactions/",
+        "url": "https://lto.network",
+        "rpcNodeInfo": "https://github.com/ltonetwork/public-node"
     }
 ]

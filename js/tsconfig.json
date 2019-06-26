@@ -5,10 +5,16 @@
     "declaration": true,
     "outDir": "./build",
     "strict": true,
-    "typeRoots": ["./node_modules/@types"],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./types"
+    ],
     "types": ["node"]
   },
   "exclude": [
     "./tests/**/*.ts"
   ],
+  "include": [
+    "./**/*.ts"
+  ]
 }

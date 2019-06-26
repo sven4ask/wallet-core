@@ -138,6 +138,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetSymbol) {
 
     auto terra = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeTerra));
     assertStringsEqual(terra, "LUNA");
+
+    auto lto = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeLTO));
+    assertStringsEqual(lto, "LTO");
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetDecimals) {
@@ -186,6 +189,7 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetDecimals) {
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeNebulas), 18);
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeAeternity), 18);
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeTerra), 6);
+    ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeLTO), 8);
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetTransactionURL) {
@@ -327,6 +331,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetTransactionURL) {
 
     auto terra = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeTerra, txId));
     assertStringsEqual(terra, "https://terra.stake.id/?#/tx/123");
+
+    auto lto = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeLTO, txId));
+    assertStringsEqual(lto, "https://explorer.lto.network/transactions/123");
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetID) {
@@ -460,6 +467,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetID) {
 
     auto terra = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeTerra));
     assertStringsEqual(terra, "terra");
+
+    auto lto = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeLTO));
+    assertStringsEqual(lto, "lto");
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetName) {
@@ -592,6 +602,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetName) {
     assertStringsEqual(nas, "Nebulas");
     auto terra = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeTerra));
     assertStringsEqual(terra, "Terra");
+
+    auto lto = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeLTO));
+    assertStringsEqual(lto, "LTO");
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeBlockchain) {
@@ -614,6 +627,7 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeBlockchain) {
     ASSERT_EQ(TWBlockchainNebulas, TWCoinTypeBlockchain(TWCoinTypeNebulas));
     ASSERT_EQ(TWBlockchainAeternity, TWCoinTypeBlockchain(TWCoinTypeAeternity));
     ASSERT_EQ(TWBlockchainCosmos, TWCoinTypeBlockchain(TWCoinTypeTerra));
+    ASSERT_EQ(TWBlockchainLTONetwork, TWCoinTypeBlockchain(TWCoinTypeLTO));
 }
 
 TEST(TWCoinTypeConfiguration, P2SHPrefix) {

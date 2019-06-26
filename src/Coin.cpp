@@ -37,6 +37,7 @@
 #include "ARK/Address.h"
 #include "Waves/Address.h"
 #include "Nebulas/Address.h"
+#include "LTO/Address.h"
 
 #include <TrustWalletCore/TWHRP.h>
 
@@ -166,6 +167,9 @@ bool TW::validateAddress(TWCoinType coin, const std::string& string) {
         
     case TWCoinTypeNebulas:
         return Nebulas::Address::isValid(string);
+
+    case TWCoinTypeLTO:
+        return LTO::Address::isValid(string);
     }
 }
 
@@ -295,6 +299,9 @@ std::string TW::deriveAddress(TWCoinType coin, const PublicKey& publicKey) {
 
     case TWCoinTypeNebulas:
         return Nebulas::Address(publicKey).string();
+    
+    case TWCoinTypeLTO:
+        return LTO::Address(publicKey).string();
     }
 }
 

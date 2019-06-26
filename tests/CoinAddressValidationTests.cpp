@@ -281,4 +281,12 @@ TEST(Coin, ValidateAddressNebulas) {
     EXPECT_FALSE(validateAddress(TWCoinTypeNebulas, "123"));
 }
 
+TEST(Coin, ValidateAddressLTO) {
+    EXPECT_TRUE(validateAddress(TWCoinTypeLTO, "3JfLsayRvWbJhZMuP6bmG447DqtHgGWnkuH"));
+    EXPECT_FALSE(validateAddress(TWCoinTypeLTO, "3JfLsayRvWbJhZMuP6bmG447DqtHgGWnkuh"));
+    EXPECT_FALSE(validateAddress(TWCoinTypeLTO, "2JfLsayRvWbJhZMuP6bmG447DqtHgGWnkuH"));
+    EXPECT_FALSE(validateAddress(TWCoinTypeLTO, "3JfLsayRvWbJhZMuP6bmG447DqtHgGWnkuHa"));
+    EXPECT_FALSE(validateAddress(TWCoinTypeLTO, "3JfLsayRvWbJhZmuP6bmG447DqtHgGWnkuH"));
+}
+
 } // namespace TW
