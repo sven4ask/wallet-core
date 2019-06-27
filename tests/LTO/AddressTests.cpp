@@ -41,8 +41,6 @@ TEST(LTOAddress, FromPrivateKey2) {
     const auto publicKeyEd25519 = privateKey.getPublicKey(TWPublicKeyTypeED25519);
     const auto address = Address(publicKeyEd25519);
 
-    std::cerr << "[          ] public key = " << hex(publicKeyEd25519.bytes) << std::endl;
-
     ASSERT_EQ(address.string(), "3Jz5cQaYMXnEhv72WvuGp7RWXQo7RCKY71f");
 }
 

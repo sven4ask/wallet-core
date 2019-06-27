@@ -13,6 +13,8 @@
 using namespace TW;
 using namespace TW::LTO;
 
+using json = nlohmann::json;
+
 Data Transaction::serializeToSign() const {
     auto data = Data();
     if (attachment.size() > 140) {
@@ -33,3 +35,20 @@ Data Transaction::serializeToSign() const {
     encodeDynamicLengthBytes(attachment, data);
     return data;
 }
+
+
+json Transaction::buildJson(Data signature) const {
+    json jsonTx;
+
+    jsonTx["type"] = TransactionType::transfer;
+    jsonTx["version"] = TransactionVersion::V2;
+    jsonTx["fee"] = fee;
+    jsonTx["senderPublicKey"] = Base58::bitcoin.encode(pub_key);
+    jsonTx["timestamp"] = timestamp;
+    jsonTx["proofs"] = json::array({Base58::bitcoin.encode(signature)});
+    jsonTx["recipient"] = Address(to).string();
+    jsonTx["amount"] = amount;
+    jsonTx["attachment"] = Base58::bitcoin.encode(attachment);
+
+    return jsonTx;
+} 

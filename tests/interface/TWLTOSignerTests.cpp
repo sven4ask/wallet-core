@@ -33,7 +33,6 @@ TEST(TWLTOSigner, Sign) {
     input.set_attachment("hello");
     input.set_timestamp(int64_t(1559146613));
     input.set_private_key(privateKey.bytes.data(), privateKey.bytes.size());
-    input.set_public_key(publicKeyED25519.bytes.data(), publicKeyED25519.bytes.size());
 
     auto inputData = input.SerializeAsString();
     auto inputTWData = TWDataCreateWithBytes((const byte *)inputData.data(), inputData.size());
@@ -47,7 +46,7 @@ TEST(TWLTOSigner, Sign) {
         /* to */ LTO::Address(input.to()),
         /* attachment */ Data(input.attachment().begin(), input.attachment().end()),
         /* timestamp */ input.timestamp(),
-        /* pub_key */ Data(input.public_key().begin(), input.public_key().end()));
+        /* pub_key */ publicKeyED25519.bytes);
 
     ASSERT_EQ(hex(transaction.serializeToSign()), "0402da29c40054a2f437f25b10dc52b7d7c4ccefe31e1302431094a6d8e6d409738f000000005ceeb0750000000005f5e10000000000000186a0014c2d5134ba47a58e0482ea5b40efc55c71b70947a0d5dbd7dc000568656c6c6f");
     ASSERT_EQ(hex(output.signature()), "26db0b9bd81faa85807b8e16647630c803180b9aedb194dad131bad2e28474936ae2bab6794e130036a0c0b7b17fe5664c8a0a8f98de4861b2b6c41fe76b5801");

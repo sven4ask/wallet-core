@@ -4,7 +4,6 @@ This list is generated from `src/coins.json`
 
 | Index   | Name          | Symbol | Logo                                                                                                   | URL                            |
 | ------- | ------------- | ------ | ------------------------------------------------------------------------------------------------------ | ------------------------------ |
-<<<<<<< Updated upstream
 | 0       | Bitcoin          | BTC    | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/0.png" width="32" />       | <https://bitcoin.org>         > |
 | 2       | Litecoin         | LTC    | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/2.png" width="32" />       | <https://litecoin.org>        > |
 | 3       | Dogecoin         | DOGE   | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/3.png" width="32" />       | <https://dogecoin.com>        > |
@@ -37,6 +36,7 @@ This list is generated from `src/coins.json`
 | 304     | IoTeX            | IOTX   | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/304.png" width="32" />     | <https://iotex.io>            > |
 | 313     | Zilliqa          | ZIL    | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/313.png" width="32" />     | <https://zilliqa.com>         > |
 | 330     | Terra            | LUNA   | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/330.png" width="32" />     | <https://terra.money>         > |
+| 353     | LTO              | LTO    | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/353.png" width="32" />     | <https://lto.network>         > |
 | 425     | Aion             | AION   | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/425.png" width="32" />     | <https://aion.network>        > |
 | 457     | Aeternity        | AE     | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/457.png" width="32" />     | <https://aeternity.com>       > |
 | 500     | Theta            | THETA  | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/500.png" width="32" />     | <https://www.thetatoken.org>  > |
@@ -60,4 +60,3 @@ This list is generated from `src/coins.json`
 | 5718350 | Wanchain         | WAN    | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/5718350.png" width="32" /> | <https://wanchain.org>        > |
 | 5741564 | Waves            | WAVES  | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/5741564.png" width="32" /> | <https://wavesplatform.com>   > |
 | 7562605 | Semux            | SEM    | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/7562605.png" width="32" /> | <https://www.semux.org>       > |
-| 352     | LTO Network      | LTO    | <img src="https://raw.githubusercontent.com/TrustWallet/tokens/master/coins/3004.png" width="32" />    | <https://lto.network/>        > |

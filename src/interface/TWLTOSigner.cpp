@@ -16,19 +16,21 @@ TW_LTO_Proto_SigningOutput TWLTOSignerSign(TW_LTO_Proto_SigningInput data) {
     Proto::SigningInput input;
     input.ParseFromArray(TWDataBytes(data), static_cast<int>(TWDataSize(data)));
 
-    auto key = PrivateKey(Data(input.private_key().begin(), input.private_key().end()));
+    auto privateKey = PrivateKey(Data(input.private_key().begin(), input.private_key().end()));
+    auto publicKey = privateKey.getPublicKey(TWPublicKeyTypeED25519);
     auto transaction = Transaction(
         /* amount */ input.amount(),
         /* fee */ input.fee(),
         /* to */ Address(input.to()),
         /* attachment */ Data(input.attachment().begin(), input.attachment().end()),
         /* timestamp */ input.timestamp(),
-        /* pub_key */ Data(input.public_key().begin(), input.public_key().end()));
+        /* pub_key */ publicKey.bytes);
 
-    Data signature = Signer::sign(key, transaction);
+    Data signature = Signer::sign(privateKey, transaction);
 
     Proto::SigningOutput protoOutput = Proto::SigningOutput();
     protoOutput.set_signature(reinterpret_cast<const char *>(signature.data()), signature.size());
+    protoOutput.set_json(transaction.buildJson(signature).dump());
     std::string serialized = protoOutput.SerializeAsString();
     return TWDataCreateWithBytes(reinterpret_cast<const uint8_t *>(serialized.data()),
                                  serialized.size());

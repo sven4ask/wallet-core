@@ -9,6 +9,7 @@
 #include "Address.h"
 #include "../Data.h"
 #include "../proto/LTO.pb.h"
+#include <nlohmann/json.hpp>
 
 namespace TW::LTO {
 
@@ -39,6 +40,7 @@ class Transaction {
 
   public:
     Data serializeToSign() const;
+    nlohmann::json buildJson(Data signature) const;
 };
 
 } // namespace TW::LTO
